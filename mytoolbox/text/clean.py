@@ -24,3 +24,20 @@ def clean_text(s):
     s=re.sub("[ ]+"," ",s)
     s = s.replace(u'\xa0', u' ')
     return s
+
+
+def resolv_a(a):
+    """Resolve the bloody unicode artefacts !
+
+    Parameters
+    ----------
+    a : str
+        string
+
+    Returns
+    -------
+    str
+        string cleaned
+    """
+
+    return re.sub(r'\\u[0-9a-fA-F]{4}', lambda x: eval('"' + x.group() + '"'), a)
