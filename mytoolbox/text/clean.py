@@ -17,7 +17,7 @@ def clean_text(s):
     """
 
     s=re.sub("\n[\s]*"," ",s)
-    s=re.sub("[^A-Za-z0-9,;.!?\sàâêéèäëïöüùûîœ’\']", '',s)
+    s=re.sub("[^A-Za-z0-9,;.!?\sàâêéèäëïöüùûîœç’\'\-]", '',s)
     s=s.replace("( ","(").replace(" )",")")
     s=s.replace(" ,",",").replace(" ;",",")
     s=s.replace(" .",".")
