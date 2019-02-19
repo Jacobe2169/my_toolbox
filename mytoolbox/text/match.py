@@ -2,6 +2,7 @@
 #!/usr/bin/env python
 import numpy as np
 from numba import jit
+import warnings
 
 def match_sequence(seq,dataset):
     """
@@ -46,7 +47,8 @@ def match_sequences(seqs,dataset):
     """
     N=len(seqs)
     if N < 1:
-        raise ValueError("Sequence is empty !")
+        warnings.warn("Sequence Empty")
+        return []
 
     if isinstance(dataset,list):
         dataset=np.asarray(dataset)
