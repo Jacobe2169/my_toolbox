@@ -1,7 +1,6 @@
 
 #!/usr/bin/env python
 import numpy as np
-from numba import jit
 import warnings
 
 def match_sequence(seq,dataset):
