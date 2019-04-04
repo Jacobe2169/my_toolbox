@@ -1,3 +1,5 @@
+import sys, random
+
 agent_header={
     "linux": [ 'Mozilla/5.0 (X11; Linux x86_64; rv:10.0.11) Gecko/20100101 conkeror/1.0pre (Debian-1.0~~pre+git120527-1)',
         'Mozilla/5.0 (X11; U; Linux x86_64; ru-RU) AppleWebKit/533.3 (KHTML, like Gecko) Leechcraft/0.4.55-13-g2230d9f Safari/533.3',
@@ -43,15 +45,15 @@ agent_header={
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10158',
         'Mozilla/5.0 (Windows NT 10.0; Win) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0']
 }
-import sys, random
 
-if sys.platform == "linux" or sys.platform == "linux2":
-    uafile = "linux"
-elif sys.platform == "darwin":
-    uafile = "darwin"
+
+uaheader_id = "linux"
+if sys.platform == "darwin":
+    uaheader_id = "darwin"
 elif sys.platform == "win32":
-    uafile = "win32"
-ualist=agent_header[uafile]
+    uaheader_id = "win32"
+
+ualist=agent_header[uaheader_id]
 
 from urllib.request import urlopen
 import requests
