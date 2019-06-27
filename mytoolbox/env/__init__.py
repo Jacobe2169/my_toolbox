@@ -20,7 +20,7 @@ def in_notebook():
     Returns ``True`` if the module is running in IPython kernel,
     ``False`` if in IPython shell or other Python shell.
     """
-    return  type_of_script() not in  ["terminal","ipython"]
+    return  type_of_script() not in ["terminal","ipython"]
 
 def yes_or_no(question, default="yes"):
     """Ask a yes/no question via raw_input() and return their answer.
